@@ -1,0 +1,11 @@
+comparison,seed,fold,macro_f1_difference
+lstm_frozen minus pooling_frozen,0,0,0.0
+lstm_frozen minus pooling_frozen,0,1,0.0
+lstm_frozen minus pooling_frozen,0,2,0.0
+lstm_frozen minus pooling_frozen,0,3,-0.1463186572393918
+lstm_frozen minus pooling_frozen,0,4,0.0
+lstm_finetuned minus pooling_finetuned,0,0,0.0
+lstm_finetuned minus pooling_finetuned,0,1,0.0
+lstm_finetuned minus pooling_finetuned,0,2,0.0
+lstm_finetuned minus pooling_finetuned,0,3,-0.12836812202994985
+lstm_finetuned minus pooling_finetuned,0,4,0.0

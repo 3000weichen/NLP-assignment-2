@@ -1,0 +1,16 @@
+setting,value
+encoder_type,lstm
+freeze_embeddings,True
+epochs,1
+batch_size,64
+learning_rate,0.001
+weight_decay,0.0001
+max_length,
+device,cpu
+seed,0
+fold,1
+training_seed,3964924996
+checkpoint_selection,minimum inner-validation NLL
+embedding_dim,50
+num_classes,3
+label_names,"['none', 'against', 'favor']"

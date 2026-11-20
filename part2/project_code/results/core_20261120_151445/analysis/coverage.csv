@@ -1,0 +1,2 @@
+n_unique_samples,n_tokens,n_oov_tokens,token_coverage,mean_text_oov_rate,negation_samples
+461,10905,786,0.9279229711141678,0.07688578199107671,143

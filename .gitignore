@@ -1,0 +1,43 @@
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Downloaded embeddings and NLTK resources
+/part2/project_code/resources/
+glove*.zip
+glove*.txt
+wiki-news-*.zip
+wiki-news-*.vec
+*.download
+*.partial
+
+# Model checkpoints (keep result CSVs and plots)
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Local datasets and library caches
+/data/
+/cache/
+/.cache/
+/hf_cache/
+
+# Local settings and credentials
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
