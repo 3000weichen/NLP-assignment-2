@@ -1,0 +1,33 @@
+setting,value
+encoder_type,lstm
+freeze_embeddings,False
+pooling,mean
+hidden_size,64
+hidden_size1,50
+hidden_size2,50
+dropout,0.1
+word_dropout,0.0
+embedding_init,pretrained
+train_fraction,0.5
+fit_size,147
+full_fit_size,295
+validation_size,74
+outer_eval_size,92
+epochs,20
+batch_size,64
+class_weighted,True
+class_weights,"[1.4848484848484849, 0.5632183908045977, 1.8148148148148149]"
+class_weight_source,inner training labels only
+training_loss,class-weighted NLL
+evaluation_loss,NLL
+learning_rate,0.001
+weight_decay,0.0001
+max_length,
+device,cpu
+seed,3
+fold,2
+training_seed,960329833
+checkpoint_selection,minimum inner-validation NLL
+embedding_dim,50
+num_classes,3
+label_names,"['none', 'against', 'favor']"

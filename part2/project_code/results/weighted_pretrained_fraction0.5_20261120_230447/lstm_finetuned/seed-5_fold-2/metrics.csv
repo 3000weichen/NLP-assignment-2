@@ -1,0 +1,2 @@
+seed,fold,loss,accuracy,macro_f1,stance_f1,best_epoch,seconds
+5,2,1.0261298443960107,0.5,0.39282051282051283,0.32,20,32.079098199959844

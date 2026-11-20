@@ -291,10 +291,183 @@ def analyze(results_dir, reuse_features=False):
     return table, groups, classes
 
 
+def compare_runs(run_dirs, output_dir):
+    """Compare completed ordinary/weighted runs on matching seeds and folds.
+
+    Summaries are descriptive; overlapping CV training sets are not independent.
+    """
+    frames = []
+    split_records = {}
+    for run_dir in run_dirs:
+        root = Path(run_dir)
+        if not (root / "summary.csv").is_file():
+            raise ValueError(f"Run is unfinished: {root}")
+        metrics = pd.read_csv(root / "fold_metrics.csv")
+        for row in metrics.itertuples():
+            folder = root / row.system / f"seed-{row.seed}_fold-{row.fold}"
+            settings_frame = pd.read_csv(folder / "settings.csv", keep_default_na=False)
+            settings = dict(zip(settings_frame.setting, settings_frame.value))
+            weighted = settings.get("class_weighted", "False") == "True"
+            if settings.get("embedding_init", "pretrained") != "pretrained":
+                raise ValueError("Compare initialization controls separately")
+            if float(settings.get("train_fraction", 1)) != 1:
+                raise ValueError("Compare data-size controls separately")
+            condition = "weighted" if weighted else "ordinary"
+            key = (row.system, row.seed, row.fold)
+            saved = pd.read_csv(folder / "split_ids.csv").to_csv(index=False)
+            shared = tuple((k, settings.get(k, default)) for k, default in {
+                "epochs": "20", "batch_size": "64", "learning_rate": "0.001",
+                "weight_decay": "0.0001", "max_length": "None",
+                "hidden_size": "64", "hidden_size1": "50", "hidden_size2": "50",
+                "dropout": "0.1", "word_dropout": "0.0", "pooling": "mean",
+                "training_seed": "", "label_names": "", "embedding_dim": "50",
+                "encoder_type": "", "freeze_embeddings": "",
+            }.items())
+            record = (saved, shared)
+            if key in split_records and split_records[key] != record:
+                raise ValueError(f"Settings or splits differ: {key}")
+            split_records[key] = record
+            item = row._asdict()
+            item["condition"] = condition
+            frames.append(item)
+    data = pd.DataFrame(frames)
+    keys = ["system", "seed", "fold"]
+    if data.duplicated(["condition"] + keys).any():
+        raise ValueError("Duplicate runs; provide each condition/seed/fold once")
+    ordinary = data[data.condition == "ordinary"]
+    weighted = data[data.condition == "weighted"]
+    paired = ordinary.merge(weighted, on=keys, suffixes=("_ordinary", "_weighted"),
+                            validate="one_to_one", how="outer", indicator=True)
+    if not paired._merge.eq("both").all():
+        raise ValueError("Wait for all ordinary and weighted folds before comparison")
+    metrics = ["macro_f1", "accuracy", "stance_f1"]
+    for metric in metrics:
+        paired[f"{metric}_difference"] = paired[f"{metric}_weighted"] - paired[f"{metric}_ordinary"]
+    output = Path(output_dir)
+    output.mkdir(parents=True, exist_ok=True)
+    data.to_csv(output / "all_fold_metrics.csv", index=False)
+    paired.drop(columns="_merge").to_csv(output / "paired_loss_differences.csv", index=False)
+    per_seed = data.groupby(["condition", "system", "seed"])[metrics].mean().reset_index()
+    per_seed.to_csv(output / "seed_means.csv", index=False)
+    summary = data.groupby(["condition", "system"])[metrics].agg(["mean", "std", "count"])
+    summary.columns = [f"{metric}_{stat}" for metric, stat in summary.columns]
+    summary.to_csv(output / "summary.csv")
+    difference_summary = paired.groupby("system")[[f"{m}_difference" for m in metrics]].agg(["mean", "std", "min", "max"])
+    difference_summary.to_csv(output / "difference_summary.csv")
+    fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+    systems = list(dict.fromkeys(data.system))
+    for i, system in enumerate(systems):
+        for condition, offset, color in [("ordinary", -0.12, "#2563eb"), ("weighted", 0.12, "#d97706")]:
+            group = data[(data.system == system) & (data.condition == condition)]
+            axes[0].scatter([i + offset] * len(group), group.macro_f1, color=color,
+                            alpha=0.6, label=condition if i == 0 else None)
+        values = paired[paired.system == system].macro_f1_difference
+        axes[1].scatter([i] * len(values), values, alpha=0.7)
+    axes[0].set(ylabel="Outer-fold macro-F1", ylim=(0, 1))
+    axes[0].legend()
+    axes[1].axhline(0, color="black", linewidth=1)
+    axes[1].set(ylabel="Weighted minus ordinary macro-F1")
+    for axis in axes:
+        axis.set_xticks(range(len(systems)), systems, rotation=25, ha="right")
+    fig.tight_layout()
+    fig.savefig(output / "loss_comparison.png", dpi=160)
+    plt.close(fig)
+    print(summary.to_string(), flush=True)
+    print(f"Saved comparison to {output}", flush=True)
+    return data, paired
+
+
+def compare_embeddings(run_dirs, output_dir):
+    """Pair pretrained and random trainable embeddings on the same folds."""
+    frames, records = [], {}
+    selected = {"pooling_finetuned", "lstm_finetuned"}
+    for run_dir in run_dirs:
+        root = Path(run_dir)
+        if not (root / "summary.csv").is_file():
+            raise ValueError(f"Run is unfinished: {root}")
+        metrics = pd.read_csv(root / "fold_metrics.csv")
+        for row in metrics[metrics.system.isin(selected)].itertuples():
+            folder = root / row.system / f"seed-{row.seed}_fold-{row.fold}"
+            frame = pd.read_csv(folder / "settings.csv", keep_default_na=False)
+            settings = dict(zip(frame.setting, frame.value))
+            condition = settings.get("embedding_init", "pretrained")
+            if condition not in {"pretrained", "random"}:
+                raise ValueError("Unknown embedding initialization")
+            if settings.get("freeze_embeddings") != "False":
+                raise ValueError("This comparison requires trainable embeddings")
+            # Settings other than initialization must match within each pair.
+            shared = tuple((key, settings.get(key, default)) for key, default in {
+                "epochs": "20", "batch_size": "64", "learning_rate": "0.001",
+                "weight_decay": "0.0001", "max_length": "None",
+                "hidden_size": "64", "hidden_size1": "50", "hidden_size2": "50",
+                "dropout": "0.1", "word_dropout": "0.0", "pooling": "mean",
+                "training_seed": "", "label_names": "", "embedding_dim": "50",
+                "encoder_type": "", "class_weighted": "False",
+                "train_fraction": "1.0", "class_weights": "None",
+            }.items())
+            split_ids = pd.read_csv(folder / "split_ids.csv").to_csv(index=False)
+            key = (row.system, row.seed, row.fold)
+            record = (shared, split_ids)
+            if key in records and records[key] != record:
+                raise ValueError(f"Settings or sample splits differ: {key}")
+            records[key] = record
+            frames.append({**row._asdict(), "initialization": condition})
+    data = pd.DataFrame(frames)
+    if data.empty:
+        raise ValueError("No trainable pooling/LSTM results found")
+    keys = ["system", "seed", "fold"]
+    if data.duplicated(["initialization"] + keys).any():
+        raise ValueError("Duplicate initialization/system/seed/fold result")
+    pretrained = data[data.initialization == "pretrained"]
+    random = data[data.initialization == "random"]
+    paired = pretrained.merge(random, on=keys, suffixes=("_pretrained", "_random"),
+                              how="outer", indicator=True, validate="one_to_one")
+    if not paired._merge.eq("both").all():
+        raise ValueError("Pretrained/random pairs are incomplete")
+    metrics = ["macro_f1", "accuracy", "stance_f1"]
+    for metric in metrics:
+        paired[f"{metric}_difference"] = paired[f"{metric}_pretrained"] - paired[f"{metric}_random"]
+    output = Path(output_dir)
+    output.mkdir(parents=True, exist_ok=True)
+    data.to_csv(output / "fold_metrics.csv", index=False)
+    paired.drop(columns="_merge").to_csv(output / "paired_initialization_differences.csv", index=False)
+    summary = data.groupby(["initialization", "system"])[metrics].agg(["mean", "std", "count"])
+    summary.columns = [f"{metric}_{stat}" for metric, stat in summary.columns]
+    summary.to_csv(output / "summary.csv")
+    data.groupby(["initialization", "system", "seed"])[metrics].mean().to_csv(output / "seed_means.csv")
+    fig, axes = plt.subplots(1, 2, figsize=(10, 4))
+    for axis, system in zip(axes, sorted(selected)):
+        values = paired[paired.system == system]
+        if values.empty:
+            continue
+        for row in values.itertuples():
+            axis.plot([0, 1], [row.macro_f1_random, row.macro_f1_pretrained],
+                      color="gray", alpha=0.45, marker="o")
+        axis.set(xticks=[0, 1], xticklabels=["Random", "GloVe"], ylim=(0, 1),
+                 ylabel="Outer-fold macro-F1", title=system)
+    fig.tight_layout()
+    fig.savefig(output / "initialization_comparison.png", dpi=160)
+    plt.close(fig)
+    print(summary.to_string(), flush=True)
+    print(f"Saved embedding comparison to {output}", flush=True)
+    return data, paired
+
+
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="Analyze a completed Project 2 run")
-    parser.add_argument("results_dir", type=Path)
+    parser.add_argument("results_dir", type=Path, nargs="?")
+    parser.add_argument("--compare-runs", type=Path, nargs="+")
+    parser.add_argument("--output", type=Path)
+    parser.add_argument("--compare-factor", choices=["loss", "embedding"], default="loss")
     parser.add_argument("--reuse-features", action="store_true")
     args = parser.parse_args()
-    analyze(args.results_dir, reuse_features=args.reuse_features)
+    if args.compare_runs:
+        if args.output is None:
+            parser.error("--compare-runs requires --output")
+        compare = compare_embeddings if args.compare_factor == "embedding" else compare_runs
+        compare(args.compare_runs, args.output)
+    elif args.results_dir is not None:
+        analyze(args.results_dir, reuse_features=args.reuse_features)
+    else:
+        parser.error("Provide results_dir or --compare-runs")

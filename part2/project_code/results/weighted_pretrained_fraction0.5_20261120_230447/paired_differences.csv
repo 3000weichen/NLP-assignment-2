@@ -1,0 +1,16 @@
+comparison,seed,fold,macro_f1_difference
+lstm_finetuned minus pooling_finetuned,0,0,0.20787056796446468
+lstm_finetuned minus pooling_finetuned,0,1,-0.13880483010076822
+lstm_finetuned minus pooling_finetuned,0,2,0.05161116189978665
+lstm_finetuned minus pooling_finetuned,0,3,-0.057834695056328156
+lstm_finetuned minus pooling_finetuned,0,4,-0.0716238632205018
+lstm_finetuned minus pooling_finetuned,3,0,-0.0515015559382459
+lstm_finetuned minus pooling_finetuned,3,1,0.05241971213377722
+lstm_finetuned minus pooling_finetuned,3,2,-0.08834807566507907
+lstm_finetuned minus pooling_finetuned,3,3,-0.14528316763875643
+lstm_finetuned minus pooling_finetuned,3,4,-0.06955568339979401
+lstm_finetuned minus pooling_finetuned,5,0,0.05496912198061632
+lstm_finetuned minus pooling_finetuned,5,1,-0.0017792360225795667
+lstm_finetuned minus pooling_finetuned,5,2,-0.10412984178941631
+lstm_finetuned minus pooling_finetuned,5,3,0.09309557427836995
+lstm_finetuned minus pooling_finetuned,5,4,-0.07261460743488535

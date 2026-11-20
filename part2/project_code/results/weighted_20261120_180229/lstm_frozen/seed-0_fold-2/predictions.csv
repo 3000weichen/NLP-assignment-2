@@ -1,0 +1,93 @@
+sample_id,text,gold,predicted,correct,prob_0,prob_1,prob_2
+train:5,"This is #America, so no you cannot make laws based on your #religion. #SemST",1,2,0,0.3915161192417145,0.06617503613233566,0.5423088669776917
+train:7,"You'd think, after 2,000 years, I would have found at least one person I'd want to tell some things to. But nope.   ~#God   #SemST",1,1,1,0.03990462049841881,0.8650830388069153,0.0950123593211174
+train:18,"Can I tell you a secret? I know who God is and how much He loves us. I love Him, too and just told the world about Him. He is love! #SemST",1,1,1,0.012906924821436405,0.7259072065353394,0.2611859440803528
+train:27,"@user The same reasons people believe in the Bible, Koran, Talmud, etc. Ignorance. Lack of education. Poverty of intelligence. #SemST",1,1,1,0.02770252525806427,0.6758683323860168,0.2964291274547577
+train:32,I am strong because I am wise and full of knowledge -Prov. 24:5 #SemST,1,1,1,0.2396131455898285,0.5564392805099487,0.20394755899906158
+train:35,"RT @user Lord, bless my latter end more than my beginning -Job 42:12 #SemST",1,1,1,0.04372166842222214,0.8694502115249634,0.08682813495397568
+train:46,My bible study started Mercy Triumphs by @user tonight- have a feeling the next 7 weeks will be amazing. #brothers #believers #SemST,1,1,1,0.05454903841018677,0.9003536105155945,0.04509739205241203
+train:47,"Oh Jesus, We write songs to praise you.#Songwriters #wewrite #Songs #Praiseyou #SemST",1,1,1,0.04645953327417374,0.8825457692146301,0.0709947720170021
+train:51,You can look at others with envy or look to God and focus on what He's calling you to become. Dream Kingdom-sized dreams. #Focus #SemST,1,1,1,0.0384589359164238,0.7882185578346252,0.17332249879837036
+train:72,RT @user A belief in a cruel god makes a cruel man. ~ Thomas Paine  #Christianity #Islam #SacrilegeSu... #SemST,2,1,0,0.013997172936797142,0.5230283141136169,0.4629744589328766
+train:79,"'God ensures justice for orphans and widows and God loves the strangers, providing them with food and clothing.' Deut 10:18. #giving #SemST",1,1,1,0.04743862897157669,0.9012731313705444,0.051288168877363205
+train:91,"@user is proud to announce @user will be guest of honor at this year's Halloween party, and Hunger Task Force food drive. #SemST",0,0,1,0.8675243258476257,0.10150755941867828,0.03096810355782509
+train:92,Graveyards owned by the local authority are available to people of all religions or none. #SemST,0,2,0,0.07240229099988937,0.4056747555732727,0.5219229459762573
+train:94,"This is eternal life, that they may know You, the only true God, and Jesus Christ whom You have sent. (John 17:3) #GOD #SemST",1,1,1,0.007763650733977556,0.9091131687164307,0.08312316983938217
+train:101,You will never control yourself until you confront self as a problem.-Pastor Merritt #Christian #Church #SemST,1,1,1,0.01572364941239357,0.8003588914871216,0.18391750752925873
+train:105,Evidence-based thought just works out better than superstition-based thought.   #freethinker #SemST,2,0,0,0.7256706953048706,0.056535504758358,0.21779382228851318
+train:106,"A #kingdom has a particular #culture, a way of doing things (Ed Welch). #SemST",0,0,1,0.49615564942359924,0.41031956672668457,0.09352471679449081
+train:113,DID YOU KNOW: The 2nd Amendment is in place 'cause politicians ignore the #CONSTITUTION. #PJNET #SOT #tcot #bcot #ccot #2ndAmendment #SemST,1,0,0,0.7879223227500916,0.17115800082683563,0.040919702500104904
+train:114,You cannot expect to walk in the supernatural without the one who is supernatural. #lethimin #Dontdoministryalone #waterwalker  #BOOM #SemST,1,1,1,0.2409372627735138,0.6260626912117004,0.13300001621246338
+train:115,@user I hope they begin to face reality. There's no God. Loving eo unconditionally is what matters. #WakeUpAmerica #Peace #SemST,1,1,1,0.020344000309705734,0.7618662118911743,0.21778975427150726
+train:118,"Didn't do what I came out to do today, but God always has a plan #trust #GodisGood #SemST",1,2,0,0.040233563631772995,0.4500480592250824,0.5097183585166931
+train:133,"Tomorrow is promised to no one, so cherish the people #God has placed in your life today! #SemST",1,1,1,0.014978478662669659,0.8543860912322998,0.13063539564609528
+train:140,"#U2ieTour Wish the lads would've matured past Christianity, like I did. But I got a science education. They didn't. SoTheyR stuck. #SemST",2,1,0,0.042063482105731964,0.4870082437992096,0.47092822194099426
+train:141,"Don't be fooled, the prayers of the wicked are useless. #User #SemST",1,2,0,0.05479038134217262,0.37536635994911194,0.5698432922363281
+train:153,"We are what we are. Nothing more, nothing less. #spirituality #SemST",1,0,0,0.8050417304039001,0.06626716256141663,0.12869112193584442
+train:161,@user it is. faith means believing in something without evidence and with that you can justify anything. #scary #SemST,2,2,1,0.04038485139608383,0.04006504267454147,0.9195501208305359
+train:163,One don't have to kill the old ones for a newly born !   #Life #Humanity #SemST,0,0,1,0.5227657556533813,0.4285520315170288,0.04868214949965477
+train:169,True education and a free mind is the best weapon against any obstacle. #SAHD  #freethinkers  #homeschooling  #SemST,2,0,0,0.7786896824836731,0.15990300476551056,0.06140730530023575
+train:171,The dominance of #Islam becomes evident when a smartphone types #Ramayana as #Ramadan. Allah hu Akbar! #SemST,1,1,1,0.026008320972323418,0.8852658271789551,0.08872587233781815
+train:175,All we need is to go back to our roots and get closer to nature.  #simplelife #liveeasy #foodforall #goslow #SemST,0,1,0,0.21421991288661957,0.6846722960472107,0.10110784322023392
+train:177,Be still. Be patient. Watch and let God work. #SemST,1,1,1,0.024282583966851234,0.8241944909095764,0.15152288973331451
+train:187,"Because He has inclined His ear to me, therefore I will call upon Him as long as I live Ps 116:2 #SemST",1,1,1,0.020621685311198235,0.8548008799552917,0.12457746267318726
+train:191,"Restore to me the joy of your salvation and grant me a willing spirit, to sustain me. (Psalm 51:12 NIV) #WordOfLife #SemST",1,1,1,0.014085646718740463,0.9141775965690613,0.07173672318458557
+train:193,I am against religion because it teaches us to be satisfied with not understanding the world. - @user #SemST,2,1,0,0.12076445668935776,0.6218200325965881,0.2574155032634735
+train:206,"#AskBobby If you were president, would you institute the Christian version of Sharia Law?  #SemST",1,2,0,0.023003490641713142,0.19921442866325378,0.7777820229530334
+train:207,True community is being able to disagree and still love one another. #roadtolife #SemST,0,1,0,0.029717735946178436,0.6160716414451599,0.35421064496040344
+train:211,It's #PrayerTime! Call in 7AM Friday 605-475-3220 access code: 685783 #PrayForCharleston #prayforUSA #atlprayer #theLifeLine #SemST,1,0,0,0.7157132625579834,0.25521260499954224,0.029074084013700485
+train:220,"#God, because you hold us close, give us the courage to let go when we need to. #SemST",1,1,1,0.02253326214849949,0.8433462381362915,0.13412050902843475
+train:221,"Never give up, you beautiful fuckers. #Optimism #MotivationalDemotivational #SemST",0,0,1,0.7080044746398926,0.24250701069831848,0.049488507211208344
+train:229,It doesn't matter where you're going -but it does matter- who you are becoming #priorities #process #SemST,0,0,1,0.9157376885414124,0.044479623436927795,0.03978266566991806
+train:237,"What is the purpose of life?"" & ""Why are we here?"" #Islam is providing clear and concise answers for these questions.#islam #SemST",1,2,0,0.1803838461637497,0.21896634995937347,0.6006497740745544
+train:239,"If you don't feel the need for God/Love, then you don't desire God.  #truth #love #SemST",1,1,1,0.013373280875384808,0.4971559941768646,0.4894707202911377
+train:244,Therefore confess your sins to each other and pray for each other so that you may be healed. James 5:16 #men #accountability #god #SemST,1,1,1,0.01070858258754015,0.9167378544807434,0.07255348563194275
+train:246,RT @user Let the scepter of Your kingdom be released -Heb. 1:8 #SemST,1,1,1,0.024012990295886993,0.9021161198616028,0.07387089729309082
+train:252,#Life is a STATION not a DESTINATION #islam #SemST,1,1,1,0.3822910189628601,0.43720951676368713,0.18049943447113037
+train:258,"1 Corinthians 13:13 ""So now faith, hope, and love abide, these three;  but the greatest of these is love."" #God #Love #Hope #Bible #SemST",1,1,1,0.008241342380642891,0.8766801357269287,0.11507854610681534
+train:259,"Prophet Muhammad said: ""Exchange gift for it will increase your love towards one another."" #islam #world #Quran #SemST",1,1,1,0.013660389930009842,0.7228713035583496,0.26346826553344727
+train:261,@user I wish I could eliminate culture. That is the new #SemST,0,2,0,0.05112685263156891,0.3322121202945709,0.6166610717773438
+train:263,"One of my favorite quotes of all-time! ""Change your thoughts and you change your world"" ~ Norman Vincent Peale #Positivity! #SemST",0,1,0,0.032571081072092056,0.8495823740959167,0.11784663051366806
+train:271,"Atheists don't believe in Satan either, so all you Satanists out there, put the sacrifice down and go have a beer! #beer #SemST",1,2,0,0.07572650909423828,0.4245200753211975,0.49975335597991943
+train:273,Do you feel your ancient roots? Look around you. Everything is our brother and sister. #spirituality #SemST,1,1,1,0.011012989096343517,0.8725063800811768,0.11648058891296387
+train:290,"From the fear of being suspected, deliver me, Jesus. #Catholic #SemST",1,1,1,0.011283480562269688,0.8117952942848206,0.17692123353481293
+train:294,"Do nothing for #God , Do everything for humans. #freethinker #LoveWins #SemST",2,2,1,0.07439395785331726,0.1248498260974884,0.8007561564445496
+train:295,Mercy lifted me up from a broken road so that I may live with a greater purpose #SemST,1,1,1,0.02360560931265354,0.8007508516311646,0.17564356327056885
+train:300,God wouldn't invest His anointing in your life if he wasn't going to bless you. #GOTFAITH #SAYYES #SemST,1,1,1,0.01870860531926155,0.7880783081054688,0.19321303069591522
+train:306,"Religious people are people too...... Just bigoted,genitalia mutilating, angry gullible people #SemST",2,0,0,0.694868266582489,0.08714954555034637,0.21798217296600342
+train:310,"I will not allow the enemy to control my appetite, but I yield my appetite to the control of the Holy Spirit. #SemST",1,1,1,0.008925865404307842,0.901778519153595,0.08929558843374252
+train:312,People may leave you but #God will never do #islam #SemST,1,2,0,0.015353583730757236,0.48483678698539734,0.4998096823692322
+train:322,"@user and, who left real #spiritual and #material #devastation of the countries where is grafted,and installed. #Ummah,#Hadith #SemST",1,1,1,0.03271001577377319,0.8965078592300415,0.0707821249961853
+train:332,@user only answer to the #Israel/#Palestine problem is a #singlesecularstate with a huge emphasis on #SemST,0,0,1,0.823809802532196,0.10825745761394501,0.06793277710676193
+train:334,@user @user @user Certainly...both Matthew and John were eyewitnesses  Liar   #lyingforjesus #SemST,2,0,0,0.745820939540863,0.11312704533338547,0.1410520225763321
+train:340,"Remove the bitterness from my heart, Lord. Amen. #SemST",1,1,1,0.009803888387978077,0.8867630958557129,0.10343299806118011
+train:348,Serious question for my atheist libertarians: How can rights exist without God? #ChristianLibertarian #SemST,1,2,0,0.017930490896105766,0.09494555741548538,0.8871240019798279
+train:353,#God has a wonderful way of turning negatives into positives. #SemST,1,2,0,0.2723936438560486,0.32263463735580444,0.4049716889858246
+train:358,"@user @user Yeah, well, he wasn't a fan of gay marriage a few years ago, so let's just see how this goes, ok? #SemST",0,0,1,0.7621288895606995,0.07874594628810883,0.1591251641511917
+train:359,Push through any pain you feel today! Your dreams are worth it! #PowerThrough #NOdaysoff #SemST,0,0,1,0.6833681464195251,0.18235956132411957,0.1342722326517105
+train:360,Sometimes God could be protecting you from something when things don't go the way you want them to.  Trust His will. #wisdom #SemST,1,1,1,0.01280301995575428,0.831578254699707,0.15561877191066742
+train:363,"The Christian is not defined by the absence of sin, but by the presence of repentance. @user #gospel #SemST",1,1,1,0.009777753613889217,0.8822757005691528,0.1079465001821518
+train:369,"God gave us a mind, and He expects Christians to use their own. Don't be led around by the decisions of others #Truth #SemST",1,2,0,0.019777225330471992,0.3435267508029938,0.6366959810256958
+train:372,"Faith sees the invisible, believes the incredible, and receives the impossible! #God #SemST",1,1,1,0.011410576291382313,0.8126110434532166,0.1759783923625946
+train:374,Faith is being in the impossibilities that we don't believe will happen #SemST,1,2,0,0.03213798254728317,0.39001184701919556,0.5778501629829407
+train:380,@user There is no such word as impossible if you are walking with the King of Glory. #SemST,1,1,1,0.03316465765237808,0.884902834892273,0.08193254470825195
+train:385,"8 years ago today my son was taken from me. If there's a god, fuck you, fuck you very much. #SemST",2,2,1,0.015333609655499458,0.3912254273891449,0.5934408903121948
+train:389,Humanist Canada stands by the US Supreme Court ruling in favor of marriage equality! #LoveWins #LoveIsLove #MarriageEquaility #SemST,0,2,0,0.19877314567565918,0.11227593570947647,0.6889508962631226
+train:390,@user Praying is ignorance. There's no God. Loving is what matters & it requires honesty. We must conserve h20! #Drought #SemST,2,1,0,0.030200911685824394,0.6947469115257263,0.27505213022232056
+train:391,@user Except for (possibly) Craig Stephen Hicks. #ChapelHillShooting #SemST,0,1,0,0.11203781515359879,0.8167576789855957,0.07120448350906372
+train:393,"you're doing the work of ending domination."" (Bell Hooks) (2/2) #feminism  #civilrights #SemST",1,1,1,0.2527962028980255,0.6202166676521301,0.12698714435100555
+train:397,They were all filled with the Holy Spirit and began to speak in foreign tongues as the Holy Spirit prompted them to speak #SemST,1,1,1,0.013705114834010601,0.8332819938659668,0.15301288664340973
+train:398,"I don't know which I'm more surprised by, the USA or Ireland, for their action on gay rights. #lgbt #USA #Ireland #SemST",0,0,1,0.9341803789138794,0.03975866734981537,0.026060964912176132
+train:403,Happy 4th of July weekend! Remember justice and liberty for all. Less tribal and more inclusive! #4thofJuly #actorslife #america #SemST,0,0,1,0.9057860970497131,0.07249229401350021,0.021721582859754562
+train:415,@user Why #buddhism works! We except ALL as they R. No judgement Mexican-American #socialjustice #worldpeace #happy #freedom #SemST,1,0,0,0.5574102401733398,0.30551010370254517,0.1370796263217926
+train:416,Being a Humanist means trying to behave decently without expectation of rewards or punishment after you are dead. ~ Kurt Vonnegut  #SemST,1,1,1,0.03196527808904648,0.765674889087677,0.20235984027385712
+train:421,"It is our choices that show who we truly are, far more than our abilities. - Albus Dumbledore, Harry Potter  #humanist #SemST",0,1,0,0.05669742077589035,0.8661267161369324,0.0771758183836937
+train:425,Leaving Christianity enables you to love the people you once rejected. #freethinker #Christianity #SemST,2,2,1,0.012742079794406891,0.1827348917722702,0.8045230507850647
+train:430,#ColumbiaHonraaSriSri yet his own country #Bharat doesn't value @user 's contribution cos it is #SemST,0,0,1,0.44359755516052246,0.34402167797088623,0.21238075196743011
+train:431,"#thebriefcase Ignorant, fanatical pieces of shit shouldn't be glorified on television. Disgusting. #SemST",0,0,1,0.8164783716201782,0.04334505274891853,0.14017663896083832
+train:440,I'm so proud of the U.S. Let's keep the momentum going and make more progress for all. #LoveWins #SemST,0,0,1,0.8937434554100037,0.08203122019767761,0.024225324392318726
+train:442,Getting good at biting my tongue with my totally brainwashed 'Xtian family. It can be so tiring & very annoying at times. #SemST,2,0,0,0.7510659694671631,0.1349284052848816,0.11400555819272995
+train:447,"Happy #SundayFunday, Mortals! #LoveWins & @user loses. Honestly? #ICouldUseALittleMoreCowbell!  #FSM #atheists #SemST",2,0,0,0.7838361263275146,0.10551963746547699,0.11064428836107254
+train:452,"Sikhism is not any better either, we have to finish all religions. ;-) @user @user @user @user @user #SemST",2,0,0,0.7339769601821899,0.22152160108089447,0.044501401484012604
+train:456,Pain and setbacks are a part of life. Stay in faith. Don't put a question mark where #God put a period.  #SemST,1,1,1,0.01190535444766283,0.7865979075431824,0.2014966905117035
+train:458,"Now that the SCOC has ruled Canadians have freedom from religion, can someone tell Harper to dummy his 'god bless Canada'. #cdnpoli #SemST",2,1,0,0.014332598075270653,0.8348698019981384,0.15079763531684875

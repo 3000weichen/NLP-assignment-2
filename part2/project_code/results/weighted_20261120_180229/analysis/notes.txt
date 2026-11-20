@@ -1,0 +1,9 @@
+Analysis uses saved outer-fold predictions, not the final test set.
+Lengths and OOV include punctuation and use the model tokenizer.
+Negation is a word-list flag, not a detector of scope or sarcasm.
+SemST exclusion is a post-hoc sensitivity analysis; model inputs are unchanged.
+The hashtag symbol remains; only the semst token is excluded in adjusted OOV.
+Bins are descriptive and missing groups are not zero accuracy.
+Group class counts may differ; inspect them before interpreting accuracy.
+Repeated seeds reuse texts; pooled prediction counts are not independent samples.
+Fold scores are descriptive; no significance claim is made.

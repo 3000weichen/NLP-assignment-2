@@ -1,5 +1,6 @@
 
 import csv
+import inspect
 import random
 import time
 from pathlib import Path
@@ -10,6 +11,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import torch
 from sklearn.metrics import accuracy_score, confusion_matrix, f1_score
+from sklearn.model_selection import train_test_split
 
 # Source: tutorial Experiment > Training, cells 128 and 130.
 
@@ -45,6 +47,7 @@ def build_model(
     dropout: float = 0.1,
     word_dropout: float = 0.0,
     device: str | torch.device = "cpu",
+    embedding_init: str = "pretrained",
 ) -> SoftmaxRegressor:
 
 
@@ -52,6 +55,10 @@ def build_model(
 
     Returns log probabilities for NLLLoss. Each model gets its own embedding
     copy so fine-tuning does not change the original vectors."""
+    if embedding_init not in {"pretrained", "random"}:
+        raise ValueError("embedding_init must be 'pretrained' or 'random'")
+    if embedding_init == "random" and freeze_embeddings:
+        raise ValueError("The random-initialization control uses trainable embeddings")
     if encoder_type not in {"pooling", "embed-and-pool", "lstm"}:
         raise ValueError("encoder_type must be 'pooling', 'embed-and-pool', or 'lstm'")
     if pooling not in {"mean", "sum"}:
@@ -73,6 +80,13 @@ def build_model(
     pad_id = emb_model.vocab.index(emb_model.pad_token)
     if matrix.ndim != 2 or matrix.shape[0] != len(emb_model.vocab):
         raise ValueError("Embedding matrix rows must match the vocabulary")
+    if embedding_init == "random":
+        # Match the pretrained scale. Preserve RNG state for the classifier head.
+        # Source: tutorial Training > Questions, cell 141 (random-vector control).
+        mean = float(emb_model.vectors.mean())
+        scale = float(emb_model.vectors.std())
+        with torch.random.fork_rng(devices=[]):
+            matrix.normal_(mean=mean, std=max(scale, 1e-8))
     matrix[pad_id].zero_()
 
     if encoder_type in {"pooling", "embed-and-pool"}:
@@ -158,13 +172,26 @@ def plot_history(history, path, title):
 
 def run_fold(samples, split, emb_model, tokenizer, label_names, model_kwargs,
              output_dir, epochs=20, batch_size=64, learning_rate=1e-3,
-             weight_decay=1e-4, max_length=None, device="cpu"):
+             weight_decay=1e-4, max_length=None, device="cpu", class_weighted=False, train_fraction=1.0):
     """Train on fit, select on dev, and score once on outer_eval.
 
+    Optional class weights use fit labels only. Validation NLL stays unweighted.
     Based on tutorial Experiment > Training. Keep the epoch with the lowest
     validation NLL, as in Project 1."""
     if epochs < 1:
         raise ValueError("epochs must be at least 1")
+    if not 0 < train_fraction <= 1:
+        raise ValueError("train_fraction must be in (0, 1]")
+    split = dict(split)
+    full_fit_size = len(split["fit"])
+    if train_fraction < 1:
+        # Subsample only fit; dev and outer_eval stay unchanged.
+        fit, _ = train_test_split(
+            split["fit"], train_size=train_fraction,
+            stratify=[samples[i]["label"] for i in split["fit"]],
+            random_state=split["training_seed"],
+        )
+        split["fit"] = sorted(fit)
     folder = Path(output_dir)
     folder.mkdir(parents=True, exist_ok=False)
     set_seed(split["training_seed"])
@@ -184,13 +211,39 @@ def run_fold(samples, split, emb_model, tokenizer, label_names, model_kwargs,
             outer_samples = selected
 
     model = build_model(emb_model, len(label_names), device=device, **model_kwargs)
+    # Keep validation NLL unchanged for checkpoint selection and comparison.
     criterion = torch.nn.NLLLoss()
+    class_weights = None
+    if class_weighted:
+        fit_labels = [samples[i]["label"] for i in split["fit"]]
+        counts = np.bincount(fit_labels, minlength=len(label_names))
+        if np.any(counts == 0):
+            raise ValueError("A class is missing from the inner training set")
+        class_weights = len(fit_labels) / (len(label_names) * counts)
+        weights = torch.tensor(class_weights, dtype=torch.float32, device=device)
+        train_criterion = torch.nn.NLLLoss(weight=weights)
+        print("Class weights:", dict(zip(label_names, class_weights.tolist())), flush=True)
+    else:
+        train_criterion = criterion
     optimizer = torch.optim.AdamW(
         (p for p in model.parameters() if p.requires_grad),
         lr=learning_rate, weight_decay=weight_decay,
     )
+    model_args = inspect.signature(build_model).bind(
+        emb_model, len(label_names), device=device, **model_kwargs
+    )
+    model_args.apply_defaults()
+    model_settings = {k: v for k, v in model_args.arguments.items()
+                      if k not in {"emb_model", "num_classes", "device"}}
     settings = {
-        **model_kwargs, "epochs": epochs, "batch_size": batch_size,
+        **model_settings, "train_fraction": train_fraction,
+        "fit_size": len(split["fit"]), "full_fit_size": full_fit_size,
+        "validation_size": len(split["dev"]), "outer_eval_size": len(split["outer_eval"]), "epochs": epochs, "batch_size": batch_size,
+        "class_weighted": class_weighted,
+        "class_weights": repr(class_weights.tolist()) if class_weights is not None else "None",
+        "class_weight_source": "inner training labels only" if class_weighted else "None",
+        "training_loss": "class-weighted NLL" if class_weighted else "NLL",
+        "evaluation_loss": "NLL",
         "learning_rate": learning_rate, "weight_decay": weight_decay,
         "max_length": max_length, "device": str(device),
         "seed": split["seed"], "fold": split["fold"],
@@ -213,7 +266,9 @@ def run_fold(samples, split, emb_model, tokenizer, label_names, model_kwargs,
     history = []
     checkpoint = folder / "model.pt"
     for epoch in range(1, epochs + 1):
-        train_result = training_one_epoch(model, loaders["fit"], optimizer, criterion, device)
+        train_result = training_one_epoch(
+            model, loaders["fit"], optimizer, train_criterion, device
+        )
         validation = evaluate(model, loaders["dev"], criterion, device)
         row = {"epoch": epoch, "train_loss": train_result["loss"],
                "train_accuracy": train_result["accuracy"]}
@@ -320,12 +375,23 @@ def summarize_results(rows, output_dir):
 def run_experiments(output_dir=None, epochs=20, batch_size=64,
                     learning_rate=1e-3, weight_decay=1e-4, max_length=None,
                     device="cpu", seeds=SEEDS, num_folds=NUM_FOLDS,
-                    inner_val_fraction=INNER_VAL_FRACTION):
+                    inner_val_fraction=INNER_VAL_FRACTION, class_weighted=False,
+                    embedding_init="pretrained", train_fraction=1.0, systems=None):
     """Run all four systems on shared folds without using the test set.
 
     Based on tutorial Training > Cross validation (cells 135 and 137)."""
+    selected_systems = list(SYSTEMS) if systems is None else list(systems)
+    if not selected_systems or len(set(selected_systems)) != len(selected_systems):
+        raise ValueError("Select distinct systems")
+    if set(selected_systems) - set(SYSTEMS):
+        raise ValueError("Unknown system name")
+    if embedding_init == "random" and any(SYSTEMS[s]["freeze_embeddings"] for s in selected_systems):
+        raise ValueError("For random embeddings, select only finetuned systems")
     if output_dir is None:
-        output_dir = RESULTS_DIR / time.strftime("core_%Y%m%d_%H%M%S")
+        prefix = "weighted" if class_weighted else "core"
+        if embedding_init != "pretrained" or train_fraction != 1:
+            prefix += f"_{embedding_init}_fraction{train_fraction:g}"
+        output_dir = RESULTS_DIR / time.strftime(f"{prefix}_%Y%m%d_%H%M%S")
     root = Path(output_dir)
     if root.exists() and any(root.iterdir()):
         raise FileExistsError(f"Output directory is not empty: {root}")
@@ -336,13 +402,15 @@ def run_experiments(output_dir=None, epochs=20, batch_size=64,
     tokenizer = create_tokenizer(embeddings)
     root.mkdir(parents=True, exist_ok=True)
     rows = []
-    for system, settings in SYSTEMS.items():
+    for system in selected_systems:
+        settings = {**SYSTEMS[system], "embedding_init": embedding_init}
         for split in splits:
             folder = root / system / f"seed-{split['seed']}_fold-{split['fold']}"
             scores = run_fold(
                 samples, split, embeddings, tokenizer, label_names, settings, folder,
                 epochs=epochs, batch_size=batch_size, learning_rate=learning_rate,
                 weight_decay=weight_decay, max_length=max_length, device=device,
+                class_weighted=class_weighted, train_fraction=train_fraction,
             )
             rows.append({"system": system, **scores})
             save_csv(root / "fold_metrics.csv", rows)
@@ -355,10 +423,17 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--epochs", type=int, default=20)
+    parser.add_argument("--seeds", type=int, nargs="+", default=SEEDS,
+                        help="CV seeds; use 3 5 to add to the existing seed-0 runs")
+    parser.add_argument("--systems", nargs="+", choices=list(SYSTEMS), default=None)
+    parser.add_argument("--embedding-init", choices=["pretrained", "random"], default="pretrained")
+    parser.add_argument("--train-fraction", type=float, default=1.0)
     parser.add_argument("--batch-size", type=int, default=64)
     parser.add_argument("--learning-rate", type=float, default=1e-3)
     parser.add_argument("--weight-decay", type=float, default=1e-4)
     parser.add_argument("--max-length", type=int, default=None)
     parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     parser.add_argument("--output-dir", type=Path, default=None)
+    parser.add_argument("--class-weighted", action="store_true",
+                        help="Weight training NLL by inverse class frequency")
     run_experiments(**vars(parser.parse_args()))

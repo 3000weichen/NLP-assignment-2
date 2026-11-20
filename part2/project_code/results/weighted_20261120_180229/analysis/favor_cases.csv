@@ -1,0 +1,84 @@
+seed,fold,sample_id,text,n_tokens,oov_rate_without_semst,has_negation,lstm_finetuned,lstm_frozen,pooling_finetuned,pooling_frozen,n_systems_correct
+0,0,train:108,Yes Islam is the mother load of bad ideas!  Christianity is not far behind!  #athiest #SemST,20,0.0,1,favor,favor,favor,favor,4
+0,3,train:12,"If you regularly base your thoughts on superstitions, you might not be able to think well.  #freethinker #SemST",22,0.0,1,favor,favor,favor,favor,4
+0,2,train:161,@user it is. faith means believing in something without evidence and with that you can justify anything. #scary #SemST,24,0.0,0,favor,favor,favor,favor,4
+0,4,train:183,"Religion lies on a collective apophenia, but you need certain conditions to keep it on and those are disappearing #SemST",22,0.0,0,favor,favor,favor,favor,4
+0,1,train:199,"@user  It's very cool, but it's not evidence for any #god. Is that what you're implying?  #SemST",26,0.0,1,favor,favor,favor,favor,4
+0,3,train:225,@user When r u going to stand up against the stupidity of faith; belief w/o evidence? #FuckReligion #FuckJesus #SemST,25,0.125,0,favor,favor,favor,favor,4
+0,3,train:235,Religious leaders are like political leaders - they say what they think people want to hear.  #freethinker #SemST,21,0.0,0,favor,favor,favor,favor,4
+0,3,train:248,Religions stopped being credible the minute the first dinosaur fossil was found.   #SemST,15,0.0,0,favor,favor,favor,favor,4
+0,3,train:33,"IDC what the bible says, constitution says you can take it and shove it right back where it came from .. We aren't a theocracy. #SemST",30,0.034482758620689655,1,favor,favor,favor,favor,4
+0,1,train:336,"@user @user If hell existed, Bush would be first in line, ""Christian"" or not. Morality transcends religion. #SemST",27,0.0,1,favor,favor,favor,favor,4
+0,0,train:392,Religions are proud when there isn't evidence for one of their made-up stories.  #freethinker #SemST,19,0.05555555555555555,1,favor,favor,favor,favor,4
+0,4,train:394,"@user Even in death, the truth prevails! Yet, what a sorrowful reality. #freethinkers #SemST",21,0.0,0,favor,favor,favor,favor,4
+0,4,train:67,"@user if u discriminate based on ur religion, be ready to be discriminated against for having that religion. @user #SemST",25,0.0,0,favor,favor,favor,favor,4
+0,4,train:78,You'd be blind not to see that this amazing moment in time is not being celebrated by religious zealots. #LoveWins #SemST,25,0.041666666666666664,1,favor,favor,favor,favor,4
+0,3,train:81,"Religion causes an arrested social development, which stopped having any sense centuries ago #SemST",16,0.0,0,favor,favor,favor,favor,4
+0,0,train:135,Both gods and religion where made up by some folks in antiquity to help explain things.  #freethinker #SemST,21,0.0,0,favor,favor,favor,against,3
+0,3,train:158,so dumb that politicians in the U.S. are obligated to sprinkle in religious language when talking to constituents  #SemST,20,0.0,0,against,favor,favor,favor,3
+0,0,train:197,@user @user Read a book that isn't about a burning bush and maybe you'll learn something #LoveWins #SemST,24,0.043478260869565216,1,favor,none,favor,favor,3
+0,3,train:234,I'm not reading that mother fucking book because a human wrote it! #religiousfreedom #Humanslie #SemST,20,0.10526315789473684,1,favor,against,favor,favor,3
+0,4,train:265,"Now, let's get SCOTUS to rule that ""Under God"" on the currency violates the Establishment Clause.  #freethinker #SemST",25,0.0,0,favor,favor,favor,against,3
+0,0,train:283,"Before going to church, African Americans should realize that their make believe god supported slavery.  #confed2015 #SemST",21,0.05,0,favor,favor,favor,against,3
+0,2,train:294,"Do nothing for #God , Do everything for humans. #freethinker #LoveWins #SemST",17,0.0625,1,favor,favor,favor,none,3
+0,4,train:357,@user maybe random shit happens to everyone regardless of whether or not they have a make-believe friend. #SemST,21,0.05,1,favor,none,favor,favor,3
+0,2,train:425,Leaving Christianity enables you to love the people you once rejected. #freethinker #Christianity #SemST,18,0.0,0,favor,favor,favor,against,3
+0,4,train:52,@user @user #Imagine no religion. There's no God. Loving one another unconditionally is what matters. WTG USA! #LoveWins #SemST,29,0.03571428571428571,1,against,favor,favor,favor,3
+0,2,train:140,"#U2ieTour Wish the lads would've matured past Christianity, like I did. But I got a science education. They didn't. SoTheyR stuck. #SemST",31,0.06666666666666667,1,none,against,favor,favor,2
+0,1,train:143,@user Read Article 11 of the Tripoli Treaty in which Pres. John Adams makes clear America is NOT a Christian nation #SemST,25,0.0,1,against,against,favor,favor,2
+0,4,train:154,@user The establishment clause sets our country apart and prevents the radical religious zealots from taking charge.  Respect it #SemST,23,0.0,0,against,against,favor,favor,2
+0,3,train:167,@user I can see why it's deleted lol #LoveWins #reasonoverreligion #SemST,16,0.13333333333333333,0,against,against,favor,favor,2
+0,1,train:174,"@user @user Yeah, right? Lol wink wink nudge nudge. The greatest part is how ""God's"" playing along! #religiondoesharm #SemST",30,0.034482758620689655,0,against,against,favor,favor,2
+0,0,train:179,...because #god made it that way is literally not ever the answer. Keep curiosity alive. #SemST,21,0.0,1,favor,against,favor,against,2
+0,3,train:186,Everyone is able to believe in whatever they want. #Freedom #SemST,14,0.0,0,none,none,favor,favor,2
+0,2,train:193,I am against religion because it teaches us to be satisfied with not understanding the world. - @user #SemST,22,0.0,1,against,against,favor,favor,2
+0,0,train:22,"Dear believers, To prove the book you must NOT read from the book. Regards, an #SemST",20,0.0,1,favor,favor,against,against,2
+0,3,train:247,Any sane person who advocates positive change in the world would be against religion. It's easy to see the damage it does. #SemST,27,0.0,0,none,none,favor,favor,2
+0,1,train:262,@user which god? Yours? not mine. oh wait i don't have one. #LoveWins #SemST,22,0.047619047619047616,1,against,against,favor,favor,2
+0,1,train:264,"The god named ""God"" is really just another god.  #freethinker #SemST",16,0.0,0,favor,favor,against,against,2
+0,2,train:306,"Religious people are people too...... Just bigoted,genitalia mutilating, angry gullible people #SemST",17,0.0,0,none,none,favor,favor,2
+0,0,train:338,"If you shout ""Almighty #god!"" that's just two claims without proof.  #SemST",19,0.0,0,favor,favor,against,against,2
+0,2,train:385,"8 years ago today my son was taken from me. If there's a god, fuck you, fuck you very much. #SemST",27,0.0,0,favor,favor,against,against,2
+0,0,train:39,"When it comes to scientific discoveries, the #religious call them bullshit until their texts already knew it. #SemST",22,0.0,0,favor,favor,against,against,2
+0,2,train:390,@user Praying is ignorance. There's no God. Loving is what matters & it requires honesty. We must conserve h20! #Drought #SemST,29,0.0,1,against,against,favor,favor,2
+0,0,train:395,"@user What is more likely to be real; Bigfoot, Loch Ness Monster or God ? #SemST",20,0.0,0,against,against,favor,favor,2
+0,1,train:426,".@AtheistRepublic Where does our morality come from?  < Our innate sense of, and response to, suffering  #atheists #HumanRights #SemST",27,0.038461538461538464,0,against,against,favor,favor,2
+0,1,train:429,Evidence-based thought has its feet planted on the ground.  Superstition-based thought does not.  #freethinker #SemST,19,0.1111111111111111,1,favor,favor,none,none,2
+0,2,train:442,Getting good at biting my tongue with my totally brainwashed 'Xtian family. It can be so tiring & very annoying at times. #SemST,27,0.038461538461538464,0,none,none,favor,favor,2
+0,0,train:134,"@user @user @user Thomas Jefferson & George Washington did not believe in an afterlife, Thomas Paine was atheist #SemST",24,0.0,1,against,against,favor,against,1
+0,0,train:148,@user @user I'd rather go to hell then worship some Image created by whites... #SemST,20,0.0,0,favor,against,against,against,1
+0,4,train:205,"Before any African American goes to church, they should realize that their make believe god supported their slavery.  #SemST",22,0.0,0,against,against,favor,against,1
+0,3,train:3,You can't think by yourself about life and believe in god. It just doesn't add up #SemST,21,0.0,1,against,against,none,favor,1
+0,3,train:326,"@user How do you feel now you evil, hompohobic, hypocritical, lying bunch of lunatics? YOU LOST. GOD LOST. LOVE WON. #SemST",30,0.034482758620689655,0,against,against,favor,against,1
+0,1,train:368,Secularism = The only sure way to prevent the nightmare of a religious boot stamping on the human face - forever. #Freedom = #SemST,27,0.0,0,none,none,favor,none,1
+0,4,train:379,"@user @user Religion its all bloody man made & causes mankind to be so hateful & to control each other, give us #SemST",27,0.0,0,none,none,favor,none,1
+0,4,train:443,".@dhiggins63 True, your #god, a fiction, is incapable of killing anything. /@PvtFraser #SemST",23,0.09090909090909091,0,against,against,favor,none,1
+0,1,train:56,It's Ask an Atheist Day! Have a question?   #askanatheist #SemST,15,0.07142857142857142,0,none,favor,none,none,1
+0,2,train:72,RT @user A belief in a cruel god makes a cruel man. ~ Thomas Paine  #Christianity #Islam #SacrilegeSu... #SemST,26,0.04,0,favor,against,against,against,1
+0,3,train:102,Could all those who believe in a god please leave. The meeting will now continue for the grown ups only. #SemST,24,0.0,0,none,none,against,against,0
+0,2,train:105,Evidence-based thought just works out better than superstition-based thought.   #freethinker #SemST,14,0.15384615384615385,0,none,none,none,none,0
+0,3,train:127,"I think Jesus said it best when He said, ""Don't cum in me Peter.""   #bible #SemST",23,0.0,1,against,against,against,against,0
+0,4,train:147,"On balance, religion does more harm than good.   #freethinker #SemST",14,0.0,0,none,none,none,none,0
+0,2,train:169,True education and a free mind is the best weapon against any obstacle. #SAHD  #freethinkers  #homeschooling  #SemST,22,0.0,0,none,none,none,none,0
+0,0,train:196,Many doctrines have been created so Christians could save face #truth #theology #SemST,16,0.0,0,against,against,against,against,0
+0,3,train:202,Thou shall think for ones self. #freethought #freethinker #reality #SemST,15,0.0,0,none,none,none,none,0
+0,0,train:217,Impressed with the nice Tunisians. Not impressed with religion; a major cause of so much heartache & death. #remembertunisia #SemST,25,0.041666666666666664,1,against,against,against,against,0
+0,0,train:227,"@user in Alberta, she could receive abstinence misinfo & shame in a public school and be forced to pray.  #abed not #SemST",27,0.038461538461538464,1,against,against,against,against,0
+0,3,train:253,Thou shalt not boil a kid in its mother's milkExodus23:19  Thank god I'm an atheist! #FUNDAMENTIA #BibleVerses #god #christianity #SemST,28,0.1111111111111111,1,against,against,against,against,0
+0,1,train:286,A pair of hands working 2gether is far better than a thousand hands clasped in prayers..!! #FreedomFromReligion #SemST,23,0.09090909090909091,0,against,against,against,none,0
+0,4,train:305,"There are two kinds of people on earth - they, who believe in Magic & Miracles & Myth (Oh my!) & we, who are Rational. Regards, an #SemST",36,0.0,0,against,against,against,against,0
+0,1,train:330,If God = Miraculous And Miracles = Impossible Then God = Impossible #logic #reason #science #RT #SemST,22,0.0,0,against,against,against,against,0
+0,2,train:334,@user @user @user Certainly...both Matthew and John were eyewitnesses  Liar   #lyingforjesus #SemST,19,0.05555555555555555,0,none,none,none,none,0
+0,4,train:337,"Happy Sun's day my friends. if any of you find god, sit down,breathe deeply and count to 10,you're having a delusion,it'll pass. #SemST",36,0.0,0,against,against,against,against,0
+0,0,train:355,"How did the crucifixion of #Christ lead the world to #salvation, when the only thing it started was the #DarkAges? #skepticism #SemST",29,0.03571428571428571,0,against,against,against,against,0
+0,4,train:362,Religion is like a booger on the face of the earth. Atheists have the tissues.  #church #god #pray #SemST,25,0.0,0,against,against,against,against,0
+0,4,train:387,I'll be answering questions today on reddit (r/atheism) for #AskanAtheistDay 2-5pm EST! #AMA #SemST,21,0.15,0,none,none,none,none,0
+0,1,train:407,If theists had a big mountain of evidence for their god do you think we'd ever fucking hear the word Faith again? #bible #god #SemST,30,0.0,0,against,against,against,against,0
+0,1,train:412,Is there a way to get Free Atheist literature to pass out at an upcoming protest I'm planning? #ffrf #SemST,24,0.0,0,none,none,none,none,0
+0,1,train:446,god of the gaps is not evidence #next #SemST,11,0.0,1,against,against,against,against,0
+0,2,train:447,"Happy #SundayFunday, Mortals! #LoveWins & @user loses. Honestly? #ICouldUseALittleMoreCowbell!  #FSM #atheists #SemST",24,0.13043478260869565,0,none,none,none,none,0
+0,2,train:452,"Sikhism is not any better either, we have to finish all religions. ;-) @user @user @user @user @user #SemST",29,0.0,1,none,none,none,none,0
+0,2,train:458,"Now that the SCOC has ruled Canadians have freedom from religion, can someone tell Harper to dummy his 'god bless Canada'. #cdnpoli #SemST",29,0.03571428571428571,0,against,against,against,against,0
+0,1,train:63,I know why he has to do it. Given the audience and the events. But the God talk in President Obama's speech jars with me. A lot. #SemST,34,0.0,0,against,against,against,against,0
+0,0,train:68,Growing up watching David Attenborough is part of the reason I feel the way I do about our planet and my despising of religion. #SemST,27,0.0,0,against,against,against,against,0
+0,4,train:82,@user When r u going to get some balls & stand up against the insanity of god worship. #FuckReligion #FuckJesus #SemST,26,0.08,0,against,against,against,against,0

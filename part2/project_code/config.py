@@ -5,8 +5,8 @@ from pathlib import Path
 PROJECT_DIR = Path(__file__).resolve().parent
 RESULTS_DIR = PROJECT_DIR / "results"
 
-# Same split settings as Project 1.
-SEEDS = (0,)
+# Keep seed 0 for the Project 1 comparison; add repeated CV runs.
+SEEDS = (0, 3, 5)
 NUM_FOLDS = 5
 INNER_VAL_FRACTION = 0.2
 

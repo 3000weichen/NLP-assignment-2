@@ -1,0 +1,93 @@
+sample_id,text,gold,predicted,correct,prob_0,prob_1,prob_2
+train:0,"@user Bless Almighty God, Almighty Holy Spirit and the Messiah. #SemST",1,1,1,0.27532893419265747,0.5924746990203857,0.1321963369846344
+train:3,You can't think by yourself about life and believe in god. It just doesn't add up #SemST,2,0,0,0.43386310338974,0.3765760064125061,0.1895608752965927
+train:6,God is so good! All the praises go up to Him! #SemST,1,0,0,0.5762509703636169,0.3701919615268707,0.053557008504867554
+train:12,"If you regularly base your thoughts on superstitions, you might not be able to think well.  #freethinker #SemST",2,2,1,0.22907157242298126,0.1783529371023178,0.5925754904747009
+train:14,@user @user @user  I have a problem with everyone who is sensationalising news! Crazy how people have forgotten #SemST,1,0,0,0.5412774682044983,0.2561384439468384,0.20258407294750214
+train:17,"no matter what I face, at the end of the day, I know I will be okay, because I know the Maker of the day...         #HappyNote #SemST",1,1,1,0.28765371441841125,0.698493480682373,0.01385277509689331
+train:19,"Just watched the #SCfeatured segment on the life of Manny Pacquiao.  If I wasn't on #TeamPacquiao already, I would be now. #respect #SemST",0,0,1,0.5741824507713318,0.3319959342479706,0.09382166713476181
+train:20,its gonna be worth it. its gonna work out. #SemST,0,0,1,0.4851836562156677,0.3971382975578308,0.11767800152301788
+train:23,@user an hour? You need to buy better weed @user #weed #SemST,0,2,0,0.14376911520957947,0.043471772223711014,0.8127591013908386
+train:33,"IDC what the bible says, constitution says you can take it and shove it right back where it came from .. We aren't a theocracy. #SemST",2,2,1,0.3003627061843872,0.211636483669281,0.48800086975097656
+train:36,"We're equal to men, and this makes us morally superior to them #fuckfeminism #EqualityForAll #SemST",0,1,0,0.35282251238822937,0.6260762214660645,0.021101195365190506
+train:40,Ali Al Amin #Lebanon Shia' it Leader: from 70s we rejected #Iran regime's conduct W #SemST,0,1,0,0.28501254320144653,0.40897136926651,0.30601614713668823
+train:44,Kip laughing as shed my tears... BT we all know what's gonna hpn in d end #ChildOfGod #SemST,1,0,0,0.6048238277435303,0.3405681252479553,0.05460801348090172
+train:49,The enemy will not be threatened by your faith until you decide to live by it. #SemST,1,0,0,0.4667237401008606,0.42028188705444336,0.11299439519643784
+train:61,"You: yes, you. You are a beautiful mammal. The world is better with you around. #UniversalLoveAndAlsoTacos #SemST",0,1,0,0.35646408796310425,0.6005024909973145,0.043033454567193985
+train:62,I hope no one is hurt. #WhoIsBurningBlackChurches #EndRacism #LoveWins #SemST,1,1,1,0.33669739961624146,0.6497089266777039,0.01359363179653883
+train:71,"6 Holy Mary Mother of God, pray for us sinners now and at the hour of our death. Amen. #rosary #teamjesus #God #SemST",1,1,1,0.1994219571352005,0.7863875031471252,0.0141904903575778
+train:73,"#Save your people, Lord, and bless those who are yours. Be their #shepherd, and take care of them forever. (Psalm 28:9 GNT) #SemST",1,1,1,0.4340932369232178,0.526841402053833,0.03906531259417534
+train:81,"Religion causes an arrested social development, which stopped having any sense centuries ago #SemST",2,1,0,0.4470953047275543,0.5174941420555115,0.035410549491643906
+train:83,'Pop may throw in the towel second half.. #SemST,0,1,0,0.3940388560295105,0.570319414138794,0.03564172610640526
+train:87,"It is not the time for posturing, pretending or pontificating, now is the time for #Baltimore #BaltimoreRiots #SemST",0,1,0,0.3716616630554199,0.5973297357559204,0.0310086440294981
+train:90,RT @user There is nothing to worry about if you have trusted Jesus Christ alone as your Savior for your sins. #FriendOfSi... #SemST,1,1,1,0.3050541877746582,0.6792548298835754,0.015691010281443596
+train:95,"Seek the whole, genuine truth. Listen to wisdom when He speaks. Catch His heart beat and abide as well as reside in Him.  #SemST",1,1,1,0.35182473063468933,0.6192498207092285,0.028925465419888496
+train:98,"And stay in your houses and do not display yourselves like that of the times of ignorance."" [Quran 33:33].#islam #SemST",1,1,1,0.30937084555625916,0.6381769776344299,0.05245215818285942
+train:99,Greater is He who is in you than he who is in the world. - 1John 4:4 #god #bible #SemST,1,1,1,0.2456255704164505,0.7191337943077087,0.03524068370461464
+train:102,Could all those who believe in a god please leave. The meeting will now continue for the grown ups only. #SemST,2,0,0,0.5300962328910828,0.4160713851451874,0.05383233726024628
+train:103,"I will not allow the accuser to accuse me, for I am washed and cleansed by the blood of the Lamb -Rev. 1:5; 7:14 #SemST",1,1,1,0.3352716267108917,0.6280404925346375,0.036687809973955154
+train:123,"Romans 15:1 We who are powerful need to be patient with the weakness of those who don't have power, and not please ourselves. CEB  #SemST",1,0,0,0.5124332308769226,0.3605641722679138,0.12700258195400238
+train:127,"I think Jesus said it best when He said, ""Don't cum in me Peter.""   #bible #SemST",2,2,1,0.19817644357681274,0.3570757508277893,0.44474780559539795
+train:129,dear lord thank u for all of ur blessings forgive my sins lord give me strength and energy for this busy day ahead #blessed #hope #SemST,1,1,1,0.40010181069374084,0.5827816724777222,0.017116574570536613
+train:132,Just listened to the most inspirational speech from Bonya Ahmed. #BHSVoltaire #intellectualthursday #FightThePower #SemST,0,1,0,0.3445875942707062,0.6424498558044434,0.012962453067302704
+train:145,You have to believe that #God is in control. That means there is no need to be stressed out and worried. #SemST,1,1,1,0.34513285756111145,0.5188062191009521,0.13606086373329163
+train:149,"RT @user Faithfulness actually means 'full of faith'. Beyond service and commitment, your heart shld be full of faith. #RWAtl #SemST",1,1,1,0.33519062399864197,0.6521225571632385,0.0126867750659585
+train:150,How to be a Happy CAMPER? Competency Autonomy Mastery Purpose Engagement Relationships create well being/meaning #100AEUAssembly #SemST,0,1,0,0.3365321159362793,0.531358003616333,0.1321098506450653
+train:156,All these bible studies I've been a part of at UNT makes me  kinda wanna to go to seminary school. #UNT #meangreen #Gospel #SemST,1,1,1,0.4354546368122101,0.5510529279708862,0.013492360711097717
+train:157,The sexiest thing you can carry right now is a BIBLE  #accessory #Christian #SemST,1,1,1,0.36822280287742615,0.5721032023429871,0.05967404320836067
+train:158,so dumb that politicians in the U.S. are obligated to sprinkle in religious language when talking to constituents  #SemST,2,2,1,0.2247210144996643,0.29143303632736206,0.483845978975296
+train:162,"Humble yourselves therefore under the mighty hand of #God, that he may exalt you in due time.  (1 Peter 5:6 KJV) #HolyBible #SemST",1,1,1,0.44936907291412354,0.5332385897636414,0.017392372712492943
+train:167,@user I can see why it's deleted lol #LoveWins #reasonoverreligion #SemST,2,0,0,0.507352352142334,0.4646680951118469,0.027979586273431778
+train:173,Don't wait. The time will never be just right. #thoughtoftheday #JUSTDOIT #SemST,0,1,0,0.4314681887626648,0.5305026769638062,0.03802919760346413
+train:184,"I am your cover girl. I make up for your lacks and deficiencies. I'm your very foundation, see I blend with you perfectly. #SemST",0,1,0,0.46692532300949097,0.5019561052322388,0.031118586659431458
+train:186,Everyone is able to believe in whatever they want. #Freedom #SemST,2,1,0,0.3134446144104004,0.5887946486473083,0.09776075929403305
+train:189,RT @user The man of God is humble in spirit; he retains honor -Prov. 29:23 #SemST,1,1,1,0.2911669611930847,0.6648364663124084,0.04399655759334564
+train:200,RT @user Jesus is my peace. #SemST,1,0,0,0.42881307005882263,0.3494911193847656,0.22169582545757294
+train:202,Thou shall think for ones self. #freethought #freethinker #reality #SemST,2,2,1,0.1283992975950241,0.0848982185125351,0.7867025136947632
+train:210,Its #gamenight w @user @user n Malden 2night @ 730 @user #freethought #humanist #none #Community #SemST,1,0,0,0.6773220300674438,0.25086677074432373,0.07181113958358765
+train:218,@user @user will be there with a few friends. Looking forward to it. #SemST,1,2,0,0.205345019698143,0.1291971355676651,0.6654577851295471
+train:224,Thankful for another day of this awesome life God has given us :) #peace #thankful #goodFather #abundant #joy #life #goodness #SemST,1,0,0,0.5070010423660278,0.4755948781967163,0.017404038459062576
+train:225,@user When r u going to stand up against the stupidity of faith; belief w/o evidence? #FuckReligion #FuckJesus #SemST,2,1,0,0.37835052609443665,0.6050243973731995,0.0166250579059124
+train:233,"And We created not the heavens and the earth, and all that is between them, for mere play,  [Quran 44:38]  #athiest  #SemST",1,1,1,0.40186986327171326,0.5705265402793884,0.027603577822446823
+train:234,I'm not reading that mother fucking book because a human wrote it! #religiousfreedom #Humanslie #SemST,2,0,0,0.5276561379432678,0.1971723586320877,0.27517151832580566
+train:235,Religious leaders are like political leaders - they say what they think people want to hear.  #freethinker #SemST,2,2,1,0.045372124761343,0.03566727042198181,0.9189606308937073
+train:236,countless more will die until this race will die by self inflicted genocide #kuwait #shunpoliticalislam #SemST,0,1,0,0.31200501322746277,0.6640150547027588,0.023979922756552696
+train:242,"Let us offer through Jesus a continual sacrafice of praise to God, proclaiming our allegiance to his name.  Hebrews13:15NLT #God #SemST",1,1,1,0.17171333730220795,0.6858475208282471,0.1424390822649002
+train:247,Any sane person who advocates positive change in the world would be against religion. It's easy to see the damage it does. #SemST,2,2,1,0.28129661083221436,0.32315200567245483,0.3955514430999756
+train:248,Religions stopped being credible the minute the first dinosaur fossil was found.   #SemST,2,2,1,0.2193913757801056,0.37138158082962036,0.40922704339027405
+train:253,Thou shalt not boil a kid in its mother's milkExodus23:19  Thank god I'm an atheist! #FUNDAMENTIA #BibleVerses #god #christianity #SemST,2,1,0,0.17099137604236603,0.6458984017372131,0.18311023712158203
+train:257,@user Ignorance does that to people. Gotta love them so they can learn to love AS WELL. #EndRacism #LoveYourNeighbor #Peace #SemST,1,1,1,0.31063026189804077,0.6783713102340698,0.010998410172760487
+train:260,"RT @user #Pray for orphans in #NorthKorea,who over the years found themselves homeless.#TeamJesusTweeters #SemST",1,0,0,0.5594815015792847,0.3690188527107239,0.07149960100650787
+train:268,"As bad as it looks. As chaos reeks havoc. As dark as the days grow. God still and forever will ever be, always in control. #PHN #SemST",1,1,1,0.3115379512310028,0.6664446592330933,0.022017456591129303
+train:270,"RT @user 3 Holy Mary Mother of God, pray for us sinners now and at the hour of our death. Amen. #rosary #SemST",1,1,1,0.247625932097435,0.7161878943443298,0.03618612885475159
+train:280,Never get so busy making a living that you forget to make a life. #Life #SemST,0,0,1,0.46333208680152893,0.4461085796356201,0.09055930376052856
+train:296,@user @user @user @user Both are utterly stupid and useless anyway. #liberalism #democracy #SemST,0,2,0,0.22931590676307678,0.14913247525691986,0.6215516924858093
+train:309,People keep asking if I'm going to be a vicar so much I'm scared it might actually happen  #christianvocations #theology #help #SemST,1,1,1,0.3277122378349304,0.6441115140914917,0.02817622944712639
+train:311,"Enough w/living off outdated guidelines, suppression, and insecurities. We're capable of making well informed decisions #SemST",0,1,0,0.43812257051467896,0.5256813168525696,0.03619612008333206
+train:313,Do not be discouraged when things dont happen like you planned. #God has better in store. Keep pressing forward! #teamPerserverance #SemST,1,1,1,0.4063800275325775,0.5667346119880676,0.026885362342000008
+train:326,"@user How do you feel now you evil, hompohobic, hypocritical, lying bunch of lunatics? YOU LOST. GOD LOST. LOVE WON. #SemST",2,1,0,0.30025091767311096,0.6075672507286072,0.09218185395002365
+train:329,"A defining moment for the U.S. yes, but even more so for the human species. We continue to march forward. #ProudToLove #LoveWins #SemST",0,1,0,0.42750027775764465,0.558548092842102,0.01395154744386673
+train:333,1 Cor 15:58 ...stand firm...Always give yourselves fully to the work of the #Lord...your labor in the Lord is not in vain > #God #SemST,1,1,1,0.2943340837955475,0.6903095841407776,0.015356278046965599
+train:342,74 aspiring #warriors joined us for a chat on morals. The #SCOTUSMarriage decision featured heavily in this topic. #LoveWins #SemST,0,1,0,0.4091358780860901,0.5636222958564758,0.02724187634885311
+train:344,I have a dream ! The end of religion  #AP666 #AtheistRollCall #TeamAtheist #freethinker #freedom #SemST,1,1,1,0.3799903988838196,0.60323166847229,0.016777867451310158
+train:361,Jesus Performed great miracles Some people still could not believe Him. Because they did not believe Him They had no faith Belief is #SemST,1,1,1,0.25764214992523193,0.6843180060386658,0.05803989619016647
+train:367,RT @user Thank you lord for such a beautiful Sunday :) truly blessed. #Blessed #church #me #jeremysumpter #Love #HAPPINES... #SemST,1,1,1,0.34820693731307983,0.6412463188171387,0.010546795092523098
+train:370,I break curses of death spoken against America by people from other nations in the name of Jesus. #SemST,1,1,1,0.3934563100337982,0.5556663274765015,0.050877321511507034
+train:371,You have not to be indifferent to those children who are starving in the desert. They and you are being connected to each other. #SemST,0,0,1,0.47214367985725403,0.2772657573223114,0.2505905330181122
+train:373,"2/2 If you have adequate numbers, pls consider estab. volunteer fire pickets #WhoIsBurningBlackChurches #SemST",0,1,0,0.3753420412540436,0.5517645478248596,0.0728934109210968
+train:375,Souls are so CONNECTED to their creator no matter how hard you tried to DISCONNECT #islam #SemST,1,1,1,0.3642675280570984,0.5858715772628784,0.04986090958118439
+train:381,"1/5""And the heaven We created with might, and indeed We are (its) expander."" (Quran (51:47) #SemST",1,0,0,0.5483055710792542,0.34386715292930603,0.10782730579376221
+train:388,The BHA conference in Bristol was a great success with 470 members in attendance #BHA2015 #SemST,1,1,1,0.3897996246814728,0.5764398574829102,0.03376051038503647
+train:400,Shout It From The Mountain Tops. Scream Out His Name In Praise.  You Don't Have To Be A Christian Or Go To Church To Worship #SemST,1,2,0,0.11427747458219528,0.09070317447185516,0.795019268989563
+train:401,"If the #purpose of life is to become wealthy, there would be no purpose after becoming wealthy #islam #SemST",1,1,1,0.38731124997138977,0.5522125959396362,0.06047612056136131
+train:406,God can turn around any situation. #trust #SemST,1,1,1,0.2582167387008667,0.7039088606834412,0.03787437081336975
+train:409,Secularism. . .secularism. I'm just gonna say this one more time. Secularism. Learn it. #religiousfreedom #freedomfromreligion #SemST,1,2,0,0.08857498317956924,0.14245560765266418,0.7689694762229919
+train:413,"I bind and cast out every spirit of the desert owl, fox, dragon, hyena, and vulture in the name of Jesus -Isa. 34:1115 #SemST",1,1,1,0.34504786133766174,0.6363557577133179,0.018596338108181953
+train:424,"Know that God is always listening, always answering-maybe not in ways you had hoped, but in ways that he knows are best #prayerworks #SemST",1,1,1,0.46188846230506897,0.47596362233161926,0.06214786693453789
+train:433,We believe the #Bible to be the word of God; ... we also believe the Book of #Mormon to be the word of God. - Joseph Smith #Prophet #SemST,1,1,1,0.2349926233291626,0.7426025867462158,0.022404810413718224
+train:436,@user or just Alittle cup of #YouGotIt #SemST,0,0,1,0.5294885039329529,0.31938740611076355,0.15112410485744476
+train:437,"His love shows me mercy, no matter the darkness that I've been in. #SemST",1,1,1,0.3370155990123749,0.641998827457428,0.02098558470606804
+train:448,Jesus  I know you didn't bring me this far to leave me #SemST,1,1,1,0.3363568186759949,0.5938289761543274,0.06981414556503296
+train:451,"In #Christ we are righteous, and in practice, we are being conformed to His image.~ Chip Ingram #Quote #FB #TeamJesus #SemST",1,1,1,0.43105798959732056,0.551893949508667,0.0170480627566576
+train:455,"Mathew 8:3 ""Jesus reached out his hand and touched the [leper]."" Are you willing to #love the unlovable? #christ #SemST",1,1,1,0.27720245718955994,0.7006794810295105,0.022118106484413147
+train:460,"If children weren't religiously indoctrinated before reaching the age of reason, we'd be living in a completely different world #SemST",1,0,0,0.3924790024757385,0.24859099090099335,0.3589300215244293

@@ -1,0 +1,21 @@
+setting,value
+encoder_type,pooling
+freeze_embeddings,False
+epochs,20
+batch_size,64
+class_weighted,True
+class_weights,"[1.4676616915422886, 0.5651340996168582, 1.8209876543209877]"
+class_weight_source,inner training labels only
+training_loss,class-weighted NLL
+evaluation_loss,NLL
+learning_rate,0.001
+weight_decay,0.0001
+max_length,
+device,cpu
+seed,0
+fold,1
+training_seed,3964924996
+checkpoint_selection,minimum inner-validation NLL
+embedding_dim,50
+num_classes,3
+label_names,"['none', 'against', 'favor']"

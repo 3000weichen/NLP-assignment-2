@@ -1,7 +1,7 @@
 """Load GloVe and its tokenizer.
 
 Sources: tutorial Pre-trained word embeddings and Tokenizer.
-Still to add: coverage statistics and nearest-word examples."""
+Coverage statistics are computed in project_code.analysis."""
 
 from pathlib import Path
 
@@ -55,3 +55,56 @@ def create_tokenizer(emb_model: PretrainedEmbeddings) -> BasicTokenizer:
         language="english",
         vocab=emb_model.vocab,
     )
+
+
+def nearest_words(emb_model, words, top_k=8):
+    """Inspect task-related cosine neighbours without using class labels.
+
+    Source: tutorial Word Embeddings > Exercises: Similarity and Analogies.
+    These examples describe the space; they do not establish classification quality.
+    """
+    if top_k < 1:
+        raise ValueError("top_k must be positive")
+    vectors = emb_model.vectors
+    norms = np.linalg.norm(vectors, axis=1)
+    pad = emb_model.vocab.index(emb_model.pad_token)
+    unk = emb_model.vocab.index(emb_model.unk_token)
+    rows = []
+    for word in words:
+        word = word.lower()
+        if word not in emb_model.vocab:
+            rows.append({"query": word, "rank": 0, "neighbour": "OOV", "cosine": np.nan})
+            continue
+        index = emb_model.vocab.index(word)
+        scores = vectors @ vectors[index]
+        scores = scores / np.maximum(norms * norms[index], 1e-12)
+        scores[[pad, unk, index]] = -np.inf
+        candidates = np.flatnonzero(np.isfinite(scores))
+        best = candidates[np.argsort(scores[candidates])[-top_k:][::-1]]
+        for rank, other in enumerate(best, 1):
+            rows.append({"query": word, "rank": rank,
+                         "neighbour": emb_model.vocab.word(int(other)),
+                         "cosine": float(scores[other])})
+    return rows
+
+
+if __name__ == "__main__":
+    import argparse
+    import csv
+    parser = argparse.ArgumentParser(description="Inspect task-related GloVe neighbours")
+    parser.add_argument("--words", nargs="+", default=[
+        "atheism", "atheist", "religion", "religious", "god", "evidence",
+        "superstition", "believe", "disbelief", "not",
+    ])
+    parser.add_argument("--top-k", type=int, default=8)
+    parser.add_argument("--output", type=Path,
+                        default=Path(__file__).resolve().parent / "results" / "embedding_neighbours.csv")
+    args = parser.parse_args()
+    model = load_embeddings()
+    rows = nearest_words(model, args.words, args.top_k)
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    with args.output.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=["query", "rank", "neighbour", "cosine"])
+        writer.writeheader()
+        writer.writerows(rows)
+    print(f"Saved neighbours to {args.output}", flush=True)
